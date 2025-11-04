@@ -66,6 +66,46 @@
 
 .project-icon {
   font-size: 3rem;
+  transition: all 0.3s ease;
+}
+
+/* Orange bloom - Shopping cart 🛒 */
+.project-icon-orange {
+  filter: drop-shadow(0 0 12px rgba(255, 152, 0, 0.5))
+          drop-shadow(0 0 24px rgba(255, 87, 34, 0.3));
+}
+
+.project-card:hover .project-icon-orange {
+  filter: drop-shadow(0 0 18px rgba(255, 152, 0, 0.7)) 
+          drop-shadow(0 0 36px rgba(255, 87, 34, 0.4))
+          drop-shadow(0 0 54px rgba(244, 67, 54, 0.2));
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Blue bloom - Chart 📊, Chat 💬 */
+.project-icon-blue {
+  filter: drop-shadow(0 0 12px rgba(33, 150, 243, 0.5))
+          drop-shadow(0 0 24px rgba(30, 136, 229, 0.3));
+}
+
+.project-card:hover .project-icon-blue {
+  filter: drop-shadow(0 0 18px rgba(33, 150, 243, 0.7)) 
+          drop-shadow(0 0 36px rgba(30, 136, 229, 0.4))
+          drop-shadow(0 0 54px rgba(25, 118, 210, 0.2));
+  transform: scale(1.1) rotate(5deg);
+}
+
+/* Gray bloom - Robot 🤖 */
+.project-icon-gray {
+  filter: drop-shadow(0 0 12px rgba(158, 158, 158, 0.5))
+          drop-shadow(0 0 24px rgba(117, 117, 117, 0.3));
+}
+
+.project-card:hover .project-icon-gray {
+  filter: drop-shadow(0 0 18px rgba(158, 158, 158, 0.7)) 
+          drop-shadow(0 0 36px rgba(117, 117, 117, 0.4))
+          drop-shadow(0 0 54px rgba(97, 97, 97, 0.2));
+  transform: scale(1.1) rotate(5deg);
 }
 
 .project-status {

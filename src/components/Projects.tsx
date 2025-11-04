@@ -8,7 +8,8 @@ const Projects = () => {
       tech: ['React', 'TypeScript', 'Node.js', 'PostgreSQL', 'Stripe'],
       image: '🛒',
       status: 'Live',
-      link: '#'
+      link: '#',
+      color: 'orange' // Shopping cart = orange
     },
     {
       title: 'Project Management SaaS',
@@ -16,7 +17,8 @@ const Projects = () => {
       tech: ['Next.js', 'Prisma', 'tRPC', 'WebSockets', 'Tailwind'],
       image: '📊',
       status: 'In Development',
-      link: '#'
+      link: '#',
+      color: 'blue' // Chart = blue
     },
     {
       title: 'AI-Powered Analytics',
@@ -24,7 +26,8 @@ const Projects = () => {
       tech: ['Vue.js', 'Python', 'FastAPI', 'TensorFlow', 'D3.js'],
       image: '🤖',
       status: 'Live',
-      link: '#'
+      link: '#',
+      color: 'gray' // Robot = gray/silver
     },
     {
       title: 'Real-time Chat App',
@@ -32,7 +35,8 @@ const Projects = () => {
       tech: ['React', 'Socket.io', 'Redis', 'WebRTC', 'Docker'],
       image: '💬',
       status: 'Live',
-      link: '#'
+      link: '#',
+      color: 'blue' // Chat bubble = blue
     }
   ]
 
@@ -50,7 +54,7 @@ const Projects = () => {
           {projects.map((project, index) => (
             <div key={index} className="project-card">
               <div className="project-image">
-                <div className="project-icon">{project.image}</div>
+                <div className={`project-icon project-icon-${project.color}`}>{project.image}</div>
                 <div className={`project-status ${project.status.toLowerCase().replace(' ', '-')}`}>
                   {project.status}
                 </div>

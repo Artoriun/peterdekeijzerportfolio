@@ -1,3 +1,115 @@
+/* Shiny Silver Logo */
+.hero-logo {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0;
+  animation: logoGlow 3s ease-in-out infinite alternate;
+}
+
+.g-clef-icon {
+  width: 5rem;
+  height: 5rem;
+  color: #c8c8c8;
+  filter: drop-shadow(0 0 3px rgba(200, 200, 200, 0.2))
+          drop-shadow(0 0 6px rgba(160, 160, 160, 0.1))
+          drop-shadow(0 1px 0 rgba(220, 220, 220, 0.4))
+          drop-shadow(0 2px 0 rgba(0, 0, 0, 0.1));
+  animation: gClefFloat 2s ease-in-out infinite;
+  transform-origin: center;
+}
+
+.g-clef-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.logo-text {
+  font-size: 6rem;
+  font-weight: 700;
+  font-family: 'Segoe UI', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
+  margin: 0;
+  white-space: nowrap;
+  background: linear-gradient(145deg, 
+    #ffffff 0%,
+    #f5f5f5 10%,
+    #e8e8e8 20%,
+    #ffffff 30%,
+    #d0d0d0 40%,
+    #f0f0f0 50%,
+    #c8c8c8 60%,
+    #e0e0e0 70%,
+    #b8b8b8 80%,
+    #d8d8d8 90%,
+    #c0c0c0 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-shadow: 
+    0 1px 0 rgba(240, 240, 240, 0.6),
+    0 2px 0 rgba(0, 0, 0, 0.1),
+    0 3px 0 rgba(0, 0, 0, 0.1),
+    0 4px 8px rgba(0, 0, 0, 0.2);
+  letter-spacing: -0.02em;
+  position: relative;
+}
+
+.logo-text::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(110deg, 
+    transparent 0%,
+    transparent 40%,
+    rgba(240, 240, 240, 0.3) 50%,
+    rgba(255, 255, 255, 0.5) 52%,
+    rgba(240, 240, 240, 0.3) 54%,
+    transparent 60%,
+    transparent 100%
+  );
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: metalShine 3s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* Animations */
+@keyframes gClefFloat {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  25% { transform: translateY(-5px) rotate(2deg); }
+  50% { transform: translateY(0px) rotate(0deg); }
+  75% { transform: translateY(-3px) rotate(-1deg); }
+}
+
+@keyframes logoGlow {
+  0% { 
+    filter: drop-shadow(0 0 2px rgba(200, 200, 200, 0.2))
+            drop-shadow(0 0 4px rgba(180, 180, 180, 0.1)); 
+  }
+  100% { 
+    filter: drop-shadow(0 0 4px rgba(200, 200, 200, 0.3))
+            drop-shadow(0 0 8px rgba(180, 180, 180, 0.2))
+            drop-shadow(0 0 12px rgba(160, 160, 160, 0.1)); 
+  }
+}
+
+@keyframes metalShine {
+  0% { 
+    background-position: -200% 0; 
+  }
+  50% { 
+    background-position: -200% 0; 
+  }
+  100% { 
+    background-position: 200% 0; 
+  }
+}
+
 .hero {
   min-height: 100vh;
   display: flex;
@@ -12,18 +124,20 @@
   max-width: 800px;
   display: flex;
   flex-direction: column;
-  gap: 3rem;
+  gap: 2rem;
   align-items: center;
   width: 100%;
   text-align: center;
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 8vw, 4.5rem);
+  font-size: clamp(1.2rem, 3vw, 1.8rem);
   font-weight: 700;
   line-height: 1.1;
   margin-bottom: 1.5rem;
-  letter-spacing: -0.02em;
+  letter-spacing: 0.05em;
+  margin-top: 0;
+  transform: translateY(-0.8rem);
 }
 
 .gradient-text {
@@ -94,9 +208,20 @@
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(100, 108, 255, 0.3);
   max-width: 400px;
   width: 100%;
+  filter: drop-shadow(0 0 30px rgba(100, 108, 255, 0.4))
+          drop-shadow(0 0 60px rgba(147, 51, 234, 0.2));
+  transition: all 0.3s ease;
+}
+
+.code-block:hover {
+  filter: drop-shadow(0 0 50px rgba(100, 108, 255, 0.6))
+          drop-shadow(0 0 100px rgba(147, 51, 234, 0.3))
+          drop-shadow(0 0 150px rgba(100, 108, 255, 0.2));
+  transform: translateY(-5px);
+  border-color: rgba(100, 108, 255, 0.5);
 }
 
 .code-header {
@@ -140,12 +265,26 @@
 }
 
 @media (max-width: 768px) {
+  .hero-logo {
+    gap: 0.75rem;
+    margin-bottom: 0;
+  }
+  
+  .g-clef-icon {
+    width: 4rem;
+    height: 4rem;
+  }
+  
+  .logo-text {
+    font-size: 4rem;
+  }
+  
   .hero-content {
-    gap: 2rem;
+    gap: 1.5rem;
   }
   
   .hero-title {
-    font-size: clamp(2rem, 8vw, 3rem);
+    font-size: clamp(1rem, 3vw, 1.5rem);
   }
   
   .code-block {

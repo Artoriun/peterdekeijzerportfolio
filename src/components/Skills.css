@@ -58,6 +58,76 @@
   font-size: 2.5rem;
   margin-bottom: 1rem;
   display: block;
+  transition: all 0.3s ease;
+}
+
+/* Orange bloom - Rocket 🚀 */
+.skill-icon-orange {
+  filter: drop-shadow(0 0 12px rgba(255, 152, 0, 0.5)) 
+          drop-shadow(0 0 24px rgba(255, 87, 34, 0.3));
+}
+
+.skill-card:hover .skill-icon-orange {
+  filter: drop-shadow(0 0 18px rgba(255, 152, 0, 0.7)) 
+          drop-shadow(0 0 36px rgba(255, 87, 34, 0.4))
+          drop-shadow(0 0 54px rgba(244, 67, 54, 0.2));
+  transform: scale(1.1);
+}
+
+/* Red bloom - Target 🎯 */
+.skill-icon-red {
+  filter: drop-shadow(0 0 12px rgba(244, 67, 54, 0.5)) 
+          drop-shadow(0 0 24px rgba(229, 57, 53, 0.3));
+}
+
+.skill-card:hover .skill-icon-red {
+  filter: drop-shadow(0 0 18px rgba(244, 67, 54, 0.7)) 
+          drop-shadow(0 0 36px rgba(229, 57, 53, 0.4))
+          drop-shadow(0 0 54px rgba(211, 47, 47, 0.2));
+  transform: scale(1.1);
+}
+
+/* Gray bloom - Tools 🔧🛠️ */
+.skill-icon-gray {
+  filter: drop-shadow(0 0 12px rgba(158, 158, 158, 0.5)) 
+          drop-shadow(0 0 24px rgba(117, 117, 117, 0.3));
+}
+
+.skill-card:hover .skill-icon-gray {
+  filter: drop-shadow(0 0 18px rgba(158, 158, 158, 0.7)) 
+          drop-shadow(0 0 36px rgba(117, 117, 117, 0.4))
+          drop-shadow(0 0 54px rgba(97, 97, 97, 0.2));
+  transform: scale(1.1);
+}
+
+/* Orange bloom - AWS ☁️ */
+.tech-icon-orange {
+  filter: drop-shadow(0 0 10px rgba(255, 152, 0, 0.5))
+          drop-shadow(0 0 20px rgba(255, 87, 34, 0.25));
+}
+
+.tech-item:hover .tech-icon-orange {
+  filter: drop-shadow(0 0 15px rgba(255, 152, 0, 0.7)) 
+          drop-shadow(0 0 30px rgba(255, 87, 34, 0.4))
+          drop-shadow(0 0 45px rgba(244, 67, 54, 0.2));
+  transform: scale(1.1);
+}
+
+/* Rainbow bloom - Art palette 🎨 */
+.skill-icon-rainbow {
+  filter: drop-shadow(0 0 10px rgba(255, 235, 59, 0.4))
+          drop-shadow(0 0 10px rgba(76, 175, 80, 0.4))
+          drop-shadow(0 0 10px rgba(33, 150, 243, 0.4))
+          drop-shadow(0 0 10px rgba(156, 39, 176, 0.4));
+}
+
+.skill-card:hover .skill-icon-rainbow {
+  filter: drop-shadow(0 0 15px rgba(255, 235, 59, 0.6))
+          drop-shadow(0 0 15px rgba(76, 175, 80, 0.6))
+          drop-shadow(0 0 15px rgba(33, 150, 243, 0.6))
+          drop-shadow(0 0 15px rgba(156, 39, 176, 0.6))
+          drop-shadow(0 0 30px rgba(244, 67, 54, 0.3));
+  transform: scale(1.1);
 }
 
 .skill-card h3 {
@@ -113,6 +183,72 @@
 
 .tech-icon {
   font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+/* Cyan bloom - PostgreSQL 🐘 */
+.tech-icon-cyan {
+  filter: drop-shadow(0 0 10px rgba(0, 188, 212, 0.5))
+          drop-shadow(0 0 20px rgba(0, 172, 193, 0.25));
+}
+
+.tech-item:hover .tech-icon-cyan {
+  filter: drop-shadow(0 0 15px rgba(0, 188, 212, 0.7)) 
+          drop-shadow(0 0 30px rgba(0, 172, 193, 0.4))
+          drop-shadow(0 0 45px rgba(0, 151, 167, 0.2));
+  transform: scale(1.1);
+}
+
+/* Blue bloom - TypeScript 📘, PostgreSQL 🐘 */
+.tech-icon-blue {
+  filter: drop-shadow(0 0 10px rgba(33, 150, 243, 0.5))
+          drop-shadow(0 0 20px rgba(30, 136, 229, 0.25));
+}
+
+.tech-item:hover .tech-icon-blue {
+  filter: drop-shadow(0 0 15px rgba(33, 150, 243, 0.7)) 
+          drop-shadow(0 0 30px rgba(30, 136, 229, 0.4))
+          drop-shadow(0 0 45px rgba(25, 118, 210, 0.2));
+  transform: scale(1.1);
+}
+
+/* Green bloom - Node.js 🟢, Vue.js 💚, MongoDB 🍃 */
+.tech-icon-green {
+  filter: drop-shadow(0 0 10px rgba(76, 175, 80, 0.5))
+          drop-shadow(0 0 20px rgba(69, 160, 73, 0.25));
+}
+
+.tech-item:hover .tech-icon-green {
+  filter: drop-shadow(0 0 15px rgba(76, 175, 80, 0.7)) 
+          drop-shadow(0 0 30px rgba(69, 160, 73, 0.4))
+          drop-shadow(0 0 45px rgba(56, 142, 60, 0.2));
+  transform: scale(1.1);
+}
+
+/* Yellow bloom - Python 🐍 */
+.tech-icon-yellow {
+  filter: drop-shadow(0 0 10px rgba(255, 235, 59, 0.5))
+          drop-shadow(0 0 20px rgba(255, 193, 7, 0.25));
+}
+
+.tech-item:hover .tech-icon-yellow {
+  filter: drop-shadow(0 0 15px rgba(255, 235, 59, 0.7)) 
+          drop-shadow(0 0 30px rgba(255, 193, 7, 0.4))
+          drop-shadow(0 0 45px rgba(255, 152, 0, 0.2));
+  transform: scale(1.1);
+}
+
+/* White bloom - Next.js ▲ */
+.tech-icon-white {
+  filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.5))
+          drop-shadow(0 0 20px rgba(240, 240, 240, 0.25));
+}
+
+.tech-item:hover .tech-icon-white {
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.7)) 
+          drop-shadow(0 0 30px rgba(240, 240, 240, 0.4))
+          drop-shadow(0 0 45px rgba(224, 224, 224, 0.2));
+  transform: scale(1.1);
 }
 
 .tech-name {
