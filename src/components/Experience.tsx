@@ -58,16 +58,16 @@ const Experience = () => {
       <div className="experience-container">
         {/* Testimonials Section */}
         <div className="testimonials-section">
-          <div className="testimonials-header">
-            <h2>Loved by teams and clients</h2>
-            <p className="testimonials-subtitle">
+          <div className="testimonials-header animate-fade-in">
+            <h2 className="animate-slide-up">Loved by teams and clients</h2>
+            <p className="testimonials-subtitle animate-slide-up animate-stagger-1">
               Don't take my word for it - listen to what colleagues and clients have to say.
             </p>
           </div>
 
           <div className="testimonials-grid">
             {testimonials.map((testimonial, index) => (
-              <div key={index} className="testimonial-card">
+              <div key={index} className={`testimonial-card animate-slide-up animate-stagger-${index + 1}`}>
                 <div className="testimonial-content">
                   <p>"{testimonial.quote}"</p>
                 </div>
@@ -86,10 +86,10 @@ const Experience = () => {
 
         {/* Experience Timeline */}
         <div className="timeline-section">
-          <h3>Professional Journey</h3>
+          <h3 className="animate-fade-in">Professional Journey</h3>
           <div className="timeline">
             {experiences.map((exp, index) => (
-              <div key={index} className="timeline-item">
+              <div key={index} className={`timeline-item animate-slide-left animate-stagger-${index + 1}`}>
                 <div className="timeline-marker"></div>
                 <div className="timeline-content">
                   <div className="timeline-period">{exp.period}</div>
@@ -99,24 +99,6 @@ const Experience = () => {
                 </div>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Contact CTA */}
-        <div className="contact-section" id="contact">
-          <div className="contact-content">
-            <h2>Ready to build something amazing?</h2>
-            <p>
-              Let's discuss your next project and create exceptional web experiences together.
-            </p>
-            <div className="contact-actions">
-              <a href="mailto:peter@example.com" className="btn btn-primary">
-                Send Email
-              </a>
-              <a href="https://linkedin.com/in/peterdekeijzer" className="btn btn-secondary">
-                LinkedIn Profile
-              </a>
-            </div>
           </div>
         </div>
       </div>

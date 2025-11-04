@@ -43,16 +43,16 @@ const Projects = () => {
   return (
     <section className="projects" id="projects">
       <div className="projects-container">
-        <div className="projects-header">
-          <h2>Featured Projects</h2>
-          <p className="projects-subtitle">
+        <div className="projects-header animate-fade-in">
+          <h2 className="animate-slide-up">Featured Projects</h2>
+          <p className="projects-subtitle animate-slide-up animate-stagger-1">
             A showcase of applications I've built using modern web technologies
           </p>
         </div>
 
         <div className="projects-grid">
           {projects.map((project, index) => (
-            <div key={index} className="project-card">
+            <div key={index} className={`project-card animate-slide-up animate-stagger-${index + 1}`}>
               <div className="project-image">
                 <div className={`project-icon project-icon-${project.color}`}>{project.image}</div>
                 <div className={`project-status ${project.status.toLowerCase().replace(' ', '-')}`}>
@@ -82,10 +82,10 @@ const Projects = () => {
           ))}
         </div>
 
-        <div className="projects-cta">
-          <h3>Interested in working together?</h3>
-          <p>Let's build something amazing with the latest web technologies</p>
-          <a href="#contact" className="btn btn-primary">Get In Touch</a>
+        <div className="projects-cta animate-fade-in">
+          <h3 className="animate-slide-up">Interested in working together?</h3>
+          <p className="animate-slide-up animate-stagger-1">Let's build something amazing with the latest web technologies</p>
+          <a href="#contact" className="btn btn-primary animate-scale animate-stagger-2">Get In Touch</a>
         </div>
       </div>
     </section>

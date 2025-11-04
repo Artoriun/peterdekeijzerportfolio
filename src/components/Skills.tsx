@@ -54,16 +54,16 @@ const Skills = () => {
   return (
     <section className="skills" id="skills">
       <div className="skills-container">
-        <div className="skills-header">
-          <h2>Redefining developer experience</h2>
-          <p className="skills-subtitle">
+        <div className="skills-header animate-fade-in">
+          <h2 className="animate-slide-up">Redefining developer experience</h2>
+          <p className="skills-subtitle animate-slide-up animate-stagger-1">
             Building web applications that are fast, reliable, and maintainable
           </p>
         </div>
 
         <div className="skills-grid">
           {skills.map((skill, index) => (
-            <div key={index} className="skill-card">
+            <div key={index} className={`skill-card animate-slide-up animate-stagger-${Math.min(index + 1, 6)}`}>
               <div className={`skill-icon skill-icon-${skill.color}`}>{skill.icon}</div>
               <h3>{skill.title}</h3>
               <p>{skill.description}</p>
@@ -72,10 +72,10 @@ const Skills = () => {
         </div>
 
         <div className="technologies-section">
-          <h3>Technologies I work with</h3>
+          <h3 className="animate-fade-in">Technologies I work with</h3>
           <div className="technologies-grid">
             {technologies.map((tech, index) => (
-              <div key={index} className="tech-item">
+              <div key={index} className={`tech-item animate-scale animate-stagger-${Math.min(index + 1, 6)}`}>
                 <span className={`tech-icon tech-icon-${tech.color}`}>{tech.icon}</span>
                 <span className="tech-name">{tech.name}</span>
               </div>
