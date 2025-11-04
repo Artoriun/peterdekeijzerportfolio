@@ -1,8 +1,10 @@
 import './Hero.css'
+import StarParticles from './StarParticles'
 
 const Hero = () => {
   return (
     <section className="hero">
+      <StarParticles />
       <div className="hero-content">
         <div className="hero-logo">
           <div className="g-clef-icon">
