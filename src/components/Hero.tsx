@@ -9,15 +9,7 @@ const Hero = () => {
           <br />
           for the Web
         </h1>
-        <p className="hero-description">
-          Peter de Keijzer is a passionate fullstack developer crafting the next generation of web applications.
-        </p>
-        <div className="hero-actions">
-          <a href="#projects" className="btn btn-primary">View Projects</a>
-          <a href="#contact" className="btn btn-secondary">Contact Me</a>
-        </div>
-      </div>
-      <div className="hero-visual">
+        <div className="hero-visual">
         <div className="code-block">
           <div className="code-header">
             <div className="code-dots">
@@ -34,6 +26,11 @@ const Hero = () => {
   passion: 'Building amazing experiences'
 }`}
           </pre>
+        </div>
+        </div>
+        <div className="hero-actions">
+          <a href="#projects" className="btn btn-primary">View Projects</a>
+          <a href="#contact" className="btn btn-secondary">Contact Me</a>
         </div>
       </div>
     </section>
