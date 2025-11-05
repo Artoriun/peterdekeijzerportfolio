@@ -61,22 +61,22 @@ const Contact = () => {
             <form className="contact-form">
               <div className="form-group">
                 <label htmlFor="name">Name</label>
-                <input type="text" id="name" name="name" required />
+                <input type="text" id="name" name="name" placeholder="Your full name" required />
               </div>
               
               <div className="form-group">
                 <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" required />
+                <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
               </div>
               
               <div className="form-group">
                 <label htmlFor="subject">Subject</label>
-                <input type="text" id="subject" name="subject" required />
+                <input type="text" id="subject" name="subject" placeholder="What's this about?" required />
               </div>
               
               <div className="form-group">
                 <label htmlFor="message">Message</label>
-                <textarea id="message" name="message" rows={5} required></textarea>
+                <textarea id="message" name="message" rows={5} placeholder="Tell me about your project, collaboration ideas, or just say hello..." required></textarea>
               </div>
               
               <button type="submit" className="btn btn-primary">
