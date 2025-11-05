@@ -37,7 +37,7 @@ const Contact = () => {
               </div>
               <div className="contact-details">
                 <h3>Location</h3>
-                <p>Amsterdam, Netherlands</p>
+                <p>Tokyo, Japan</p>
               </div>
             </div>
 

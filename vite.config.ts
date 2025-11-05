@@ -7,10 +7,17 @@ export default defineConfig({
   server: {
     allowedHosts: [
       'peter-portfolio.loca.lt',
-      '.loca.lt' // Allow all localtunnel subdomains
+      '.loca.lt', // Allow all localtunnel subdomains
+      '.trycloudflare.com' // Allow all cloudflare tunnel domains
     ],
     hmr: {
       clientPort: 443 // Use HTTPS port for tunnel compatibility
     }
+  },
+  preview: {
+    allowedHosts: [
+      '.loca.lt', // Allow all localtunnel subdomains
+      '.trycloudflare.com' // Allow all cloudflare tunnel domains
+    ]
   }
 })
