@@ -88,8 +88,47 @@
   transition: all 0.3s ease;
 }
 
+/* First testimonial - Blue (Home) */
+.testimonial-card:nth-child(1) .author-avatar {
+  background: linear-gradient(135deg, #1e90ff 0%, #0080ff 100%);
+  filter: drop-shadow(0 0 8px rgba(30, 144, 255, 0.4));
+}
+
+.testimonial-card:nth-child(1):hover .author-avatar {
+  filter: drop-shadow(0 0 16px rgba(30, 144, 255, 0.6)) drop-shadow(0 0 32px rgba(30, 144, 255, 0.2));
+}
+
+/* Second testimonial - Purple (Skills) */
+.testimonial-card:nth-child(2) .author-avatar {
+  background: linear-gradient(135deg, #8b5cf6 0%, #7c3aed 100%);
+  filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.4));
+}
+
+.testimonial-card:nth-child(2):hover .author-avatar {
+  filter: drop-shadow(0 0 16px rgba(139, 92, 246, 0.6)) drop-shadow(0 0 32px rgba(139, 92, 246, 0.2));
+}
+
+/* Third testimonial - Red (Projects) */
+.testimonial-card:nth-child(3) .author-avatar {
+  background: linear-gradient(135deg, #ff4444 0%, #dc2626 100%);
+  filter: drop-shadow(0 0 8px rgba(255, 68, 68, 0.4));
+}
+
+.testimonial-card:nth-child(3):hover .author-avatar {
+  filter: drop-shadow(0 0 16px rgba(255, 68, 68, 0.6)) drop-shadow(0 0 32px rgba(255, 68, 68, 0.2));
+}
+
+/* Fourth testimonial - Green (Experience) */
+.testimonial-card:nth-child(4) .author-avatar {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+  filter: drop-shadow(0 0 8px rgba(34, 197, 94, 0.4));
+}
+
+.testimonial-card:nth-child(4):hover .author-avatar {
+  filter: drop-shadow(0 0 16px rgba(34, 197, 94, 0.6)) drop-shadow(0 0 32px rgba(34, 197, 94, 0.2));
+}
+
 .testimonial-card:hover .author-avatar {
-  filter: drop-shadow(0 0 16px rgba(100, 108, 255, 0.6)) drop-shadow(0 0 32px rgba(100, 108, 255, 0.2));
   transform: scale(1.05);
 }
 
@@ -142,7 +181,7 @@
   top: 0;
   bottom: 0;
   width: 2px;
-  background: linear-gradient(180deg, #1e90ff 0%, #0080ff 50%, #00bfff 100%);
+  background: linear-gradient(180deg, #1e90ff 0%, #ff4444 50%, #22c55e 100%);
 }
 
 .timeline-item {
@@ -161,6 +200,18 @@
   background: linear-gradient(135deg, #1e90ff 0%, #0080ff 100%);
   border: 4px solid rgba(36, 36, 36, 1);
   z-index: 1;
+}
+
+.timeline-item:nth-child(1) .timeline-marker {
+  background: linear-gradient(135deg, #1e90ff 0%, #0080ff 100%);
+}
+
+.timeline-item:nth-child(2) .timeline-marker {
+  background: linear-gradient(135deg, #ff4444 0%, #ff6666 100%);
+}
+
+.timeline-item:nth-child(3) .timeline-marker {
+  background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
 }
 
 .timeline-content {
@@ -184,11 +235,59 @@
   margin-bottom: 1rem;
 }
 
+/* First timeline item period - Blue gradient */
+.timeline-item:nth-child(1) .timeline-period {
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #1e90ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Second timeline item period - Red gradient */
+.timeline-item:nth-child(2) .timeline-period {
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #ff4444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Third timeline item period - Green gradient */
+.timeline-item:nth-child(3) .timeline-period {
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 50%, #22c55e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
 .timeline-content h4 {
   font-size: 1.25rem;
   font-weight: 600;
   color: rgba(255, 255, 255, 0.9);
   margin-bottom: 0.5rem;
+}
+
+/* First timeline item - Blue gradient */
+.timeline-item:nth-child(1) .timeline-content h4 {
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #1e90ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Second timeline item - Red gradient */
+.timeline-item:nth-child(2) .timeline-content h4 {
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #ff4444 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Third timeline item - Green gradient */
+.timeline-item:nth-child(3) .timeline-content h4 {
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 40%, #22c55e 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
 .timeline-company {
