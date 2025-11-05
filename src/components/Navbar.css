@@ -100,11 +100,50 @@
   transition: left 0.5s ease;
 }
 
+/* Color-specific shimmer effects */
+.navbar-link-home::before {
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(30, 144, 255, 0.3), 
+    transparent
+  );
+}
+
+.navbar-link-skills::before {
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(147, 51, 234, 0.3), 
+    transparent
+  );
+}
+
+.navbar-link-projects::before {
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(239, 68, 68, 0.3), 
+    transparent
+  );
+}
+
+.navbar-link-experience::before {
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(34, 197, 94, 0.3), 
+    transparent
+  );
+}
+
+.navbar-link-contact::before {
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(30, 144, 255, 0.3), 
+    transparent
+  );
+}
+
 .navbar-link:hover {
   color: #ffffff;
-  background: rgba(30, 144, 255, 0.2);
   transform: translateY(-1px);
-  box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
 }
 
 .navbar-link:hover::before {
@@ -113,6 +152,20 @@
 
 .navbar-link.active {
   color: #ffffff;
+}
+
+.navbar-link.active::before {
+  display: none;
+}
+
+/* Individual button color schemes */
+/* Home - Blue (default, already defined above) */
+.navbar-link-home:hover {
+  background: rgba(30, 144, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
+}
+
+.navbar-link-home.active {
   background: linear-gradient(135deg, 
     rgba(30, 144, 255, 0.8) 0%,
     rgba(0, 191, 255, 0.6) 50%,
@@ -123,8 +176,72 @@
     0 0 20px rgba(30, 144, 255, 0.2);
 }
 
-.navbar-link.active::before {
-  display: none;
+/* Skills - Purple */
+.navbar-link-skills:hover {
+  background: rgba(147, 51, 234, 0.2);
+  box-shadow: 0 4px 15px rgba(147, 51, 234, 0.3);
+}
+
+.navbar-link-skills.active {
+  background: linear-gradient(135deg, 
+    rgba(147, 51, 234, 0.8) 0%,
+    rgba(168, 85, 247, 0.6) 50%,
+    rgba(124, 58, 237, 0.8) 100%
+  );
+  box-shadow: 
+    0 4px 15px rgba(147, 51, 234, 0.4),
+    0 0 20px rgba(147, 51, 234, 0.2);
+}
+
+/* Projects - Red */
+.navbar-link-projects:hover {
+  background: rgba(239, 68, 68, 0.2);
+  box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
+}
+
+.navbar-link-projects.active {
+  background: linear-gradient(135deg, 
+    rgba(239, 68, 68, 0.8) 0%,
+    rgba(248, 113, 113, 0.6) 50%,
+    rgba(220, 38, 38, 0.8) 100%
+  );
+  box-shadow: 
+    0 4px 15px rgba(239, 68, 68, 0.4),
+    0 0 20px rgba(239, 68, 68, 0.2);
+}
+
+/* Experience - Green */
+.navbar-link-experience:hover {
+  background: rgba(34, 197, 94, 0.2);
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+}
+
+.navbar-link-experience.active {
+  background: linear-gradient(135deg, 
+    rgba(34, 197, 94, 0.8) 0%,
+    rgba(74, 222, 128, 0.6) 50%,
+    rgba(22, 163, 74, 0.8) 100%
+  );
+  box-shadow: 
+    0 4px 15px rgba(34, 197, 94, 0.4),
+    0 0 20px rgba(34, 197, 94, 0.2);
+}
+
+/* Contact - Blue (same as home) */
+.navbar-link-contact:hover {
+  background: rgba(30, 144, 255, 0.2);
+  box-shadow: 0 4px 15px rgba(30, 144, 255, 0.3);
+}
+
+.navbar-link-contact.active {
+  background: linear-gradient(135deg, 
+    rgba(30, 144, 255, 0.8) 0%,
+    rgba(0, 191, 255, 0.6) 50%,
+    rgba(0, 128, 255, 0.8) 100%
+  );
+  box-shadow: 
+    0 4px 15px rgba(30, 144, 255, 0.4),
+    0 0 20px rgba(30, 144, 255, 0.2);
 }
 
 /* Mobile responsiveness */

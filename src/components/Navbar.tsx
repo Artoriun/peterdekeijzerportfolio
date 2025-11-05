@@ -59,7 +59,7 @@ const Navbar: React.FC = () => {
             <li key={item.id} className="navbar-item">
               <button
                 onClick={() => scrollToSection(item.id)}
-                className={`navbar-link ${activeSection === item.id ? 'active' : ''}`}
+                className={`navbar-link navbar-link-${item.id} ${activeSection === item.id ? 'active' : ''}`}
               >
                 {item.label}
               </button>
