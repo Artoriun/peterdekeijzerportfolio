@@ -87,15 +87,4 @@ html {
   scroll-behavior: smooth;
 }
 
-/* Light mode adjustments */
-@media (prefers-color-scheme: light) {
-  .btn-secondary {
-    background: rgba(0, 0, 0, 0.05);
-    color: rgba(0, 0, 0, 0.8);
-    border-color: rgba(0, 0, 0, 0.1);
-  }
-  
-  .btn-secondary:hover {
-    background: rgba(0, 0, 0, 0.1);
-  }
-}
+
