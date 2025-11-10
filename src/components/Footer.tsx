@@ -50,6 +50,16 @@ const Footer = () => {
                 </svg>
                 <span>Email</span>
               </a>
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="social-link">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M14 2H6A2 2 0 0 0 4 4V20A2 2 0 0 0 6 22H18A2 2 0 0 0 20 20V8L14 2Z" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <polyline points="14,2 14,8 20,8" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <line x1="16" y1="13" x2="8" y2="13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <line x1="16" y1="17" x2="8" y2="17" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                  <polyline points="10,9 9,9 8,9" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <span>Resume</span>
+              </a>
             </div>
           </div>
 
@@ -77,16 +87,7 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Quick Links */}
-          <div className="footer-links">
-            <h3>Quick Links</h3>
-            <ul>
-              <li><a href="/resume.pdf" target="_blank" rel="noopener noreferrer" className="footer-link">Resume</a></li>
-              <li><a href="https://blog.peterdekeijzer.com" target="_blank" rel="noopener noreferrer" className="footer-link">Blog</a></li>
-              <li><button onClick={() => scrollToSection('projects')} className="footer-link">Portfolio</button></li>
-              <li><button onClick={() => scrollToSection('contact')} className="footer-link">Hire Me</button></li>
-            </ul>
-          </div>
+
         </div>
 
         {/* Bottom Bar */}

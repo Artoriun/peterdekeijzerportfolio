@@ -18,7 +18,7 @@
 
 .footer-content {
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr 1fr;
+  grid-template-columns: 2fr 1fr 1fr;
   gap: 3rem;
   padding: 4rem 2rem 2rem;
 }
@@ -87,8 +87,7 @@
 }
 
 .footer-nav h3,
-.footer-skills h3,
-.footer-links h3 {
+.footer-skills h3 {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 1rem;
@@ -97,8 +96,7 @@
 }
 
 .footer-nav h3::after,
-.footer-skills h3::after,
-.footer-links h3::after {
+.footer-skills h3::after {
   content: '';
   position: absolute;
   bottom: -0.5rem;
@@ -110,16 +108,14 @@
 }
 
 .footer-nav ul,
-.footer-skills ul,
-.footer-links ul {
+.footer-skills ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .footer-nav li,
-.footer-skills li,
-.footer-links li {
+.footer-skills li {
   margin-bottom: 0.5rem;
 }
 
@@ -214,11 +210,6 @@
     grid-template-columns: 2fr 1fr 1fr;
     gap: 2rem;
   }
-  
-  .footer-links {
-    grid-column: 1 / -1;
-    margin-top: 1rem;
-  }
 }
 
 @media (max-width: 768px) {
@@ -263,8 +254,7 @@
   }
   
   .footer-nav,
-  .footer-skills,
-  .footer-links {
+  .footer-skills {
     text-align: center;
   }
   
