@@ -38,6 +38,26 @@
   background-repeat: repeat, no-repeat, no-repeat, no-repeat, repeat, no-repeat;
 }
 
+.contact::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 300px;
+  background: linear-gradient(180deg, 
+    #242424 0%, 
+    rgba(36, 36, 36, 0.95) 20%, 
+    rgba(36, 36, 36, 0.85) 40%, 
+    rgba(36, 36, 36, 0.7) 60%, 
+    rgba(36, 36, 36, 0.5) 70%, 
+    rgba(36, 36, 36, 0.3) 80%, 
+    rgba(36, 36, 36, 0.1) 90%, 
+    transparent 100%
+  );
+  z-index: 1;
+}
+
 .contact-container {
   max-width: 1200px;
   width: 100%;
