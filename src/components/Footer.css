@@ -231,6 +231,23 @@
     flex-wrap: wrap;
   }
   
+  .footer-nav,
+  .footer-skills {
+    text-align: center;
+  }
+  
+  .footer-nav ul,
+  .footer-skills ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-link {
+    text-align: center;
+    margin: 0 auto;
+  }
+  
   .footer-bottom {
     padding: 1.5rem 1rem;
   }
@@ -256,6 +273,18 @@
   .footer-nav,
   .footer-skills {
     text-align: center;
+  }
+  
+  .footer-nav ul,
+  .footer-skills ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer-link {
+    text-align: center;
+    margin: 0 auto;
   }
   
   .footer-logo-text {
