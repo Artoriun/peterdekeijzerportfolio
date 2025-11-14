@@ -1,8 +1,10 @@
 import './Contact.css'
+import StarParticles from './StarParticles'
 
 const Contact = () => {
   return (
     <section className="contact">
+      <StarParticles />
       <div className="contact-container">
         <h2 className="contact-title animate-fade-in">
           <span className="gradient-text animate-slide-up">Get In Touch</span>
