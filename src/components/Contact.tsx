@@ -1,7 +1,41 @@
+import { useState } from 'react'
 import './Contact.css'
 import StarParticles from './StarParticles'
+import { useContactForm } from '../hooks/useContactForm'
 
 const Contact = () => {
+  const { submitForm, loading, error, success, resetForm } = useContactForm()
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    subject: '',
+    message: ''
+  })
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value
+    }))
+  }
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    const result = await submitForm(formData)
+    
+    if (result.success) {
+      setFormData({
+        name: '',
+        email: '',
+        subject: '',
+        message: ''
+      })
+      // Reset success message after 5 seconds
+      setTimeout(resetForm, 5000)
+    }
+  }
+
   return (
     <section className="contact">
       <StarParticles />
@@ -60,29 +94,75 @@ const Contact = () => {
           </div>
 
           <div className="contact-form-wrapper animate-slide-right">
-            <form className="contact-form">
+            {success && (
+              <div className="form-success-message">
+                <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <polyline points="20 6 9 17 4 12" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+                <p>Thank you for your message! I'll get back to you soon.</p>
+              </div>
+            )}
+            
+            <form className="contact-form" onSubmit={handleSubmit}>
+              {error && <div className="form-error-message">{error}</div>}
+              
               <div className="form-group">
                 <label htmlFor="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Your full name" required />
+                <input 
+                  type="text" 
+                  id="name" 
+                  name="name" 
+                  placeholder="Your full name" 
+                  value={formData.name}
+                  onChange={handleChange}
+                  disabled={loading}
+                  required 
+                />
               </div>
               
               <div className="form-group">
                 <label htmlFor="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="your.email@example.com" required />
+                <input 
+                  type="email" 
+                  id="email" 
+                  name="email" 
+                  placeholder="your.email@example.com" 
+                  value={formData.email}
+                  onChange={handleChange}
+                  disabled={loading}
+                  required 
+                />
               </div>
               
               <div className="form-group">
                 <label htmlFor="subject">Subject</label>
-                <input type="text" id="subject" name="subject" placeholder="What's this about?" required />
+                <input 
+                  type="text" 
+                  id="subject" 
+                  name="subject" 
+                  placeholder="What's this about?" 
+                  value={formData.subject}
+                  onChange={handleChange}
+                  disabled={loading}
+                />
               </div>
               
               <div className="form-group">
                 <label htmlFor="message">Message</label>
-                <textarea id="message" name="message" rows={5} placeholder="Tell me about your project, collaboration ideas, or just say hello..." required></textarea>
+                <textarea 
+                  id="message" 
+                  name="message" 
+                  rows={5} 
+                  placeholder="Tell me about your project, collaboration ideas, or just say hello..." 
+                  value={formData.message}
+                  onChange={handleChange}
+                  disabled={loading}
+                  required
+                ></textarea>
               </div>
               
-              <button type="submit" className="btn btn-primary">
-                Send Message
+              <button type="submit" className="btn btn-primary" disabled={loading}>
+                {loading ? 'Sending...' : 'Send Message'}
                 <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" style={{ width: '18px', height: '18px' }}>
                   <path d="M22 2L11 13" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   <polygon points="22,2 15,22 11,13 2,9 22,2" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
