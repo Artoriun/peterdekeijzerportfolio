@@ -27,8 +27,13 @@ app.use(cors(corsOptions))
 app.use(bodyParser.json({ limit: '10kb' }))
 app.use(bodyParser.urlencoded({ limit: '10kb', extended: true }))
 
-// Connect to MongoDB
-connectDB()
+// Try to connect to MongoDB if URI is provided
+if (process.env.MONGODB_URI) {
+  connectDB().catch(err => {
+    console.warn('⚠️  MongoDB connection failed. Running in demo mode without database persistence.')
+    console.warn('To enable database features, configure MONGODB_URI in server/.env')
+  })
+}
 
 // Routes
 app.use('/api/health', healthRoutes)
@@ -55,6 +60,7 @@ app.use((err, req, res, next) => {
 app.listen(PORT, () => {
   console.log(`✓ Server running on port ${PORT}`)
   console.log(`✓ Environment: ${process.env.NODE_ENV || 'development'}`)
+  console.log(`✓ CORS enabled for: ${process.env.FRONTEND_URL || 'http://localhost:5173'}`)
 })
 
 export default app
