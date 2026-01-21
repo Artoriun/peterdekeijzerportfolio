@@ -84,8 +84,8 @@ const Experience = () => {
           </div>
         </div>
 
-        {/* Experience Timeline */}
-        <div className="timeline-section">
+        {/* Experience Timeline - Hidden */}
+        {/* <div className="timeline-section">
           <h3 className="animate-fade-in">Professional Journey</h3>
           <div className="timeline">
             {experiences.map((exp, index) => (
@@ -100,7 +100,7 @@ const Experience = () => {
               </div>
             ))}
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   )

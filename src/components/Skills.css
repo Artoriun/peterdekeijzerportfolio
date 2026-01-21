@@ -1,6 +1,6 @@
 .skills {
   padding: 6rem 2rem;
-  background: linear-gradient(180deg, transparent 0%, rgba(100, 108, 255, 0.02) 100%);
+  background: linear-gradient(180deg, transparent 0%, rgba(239, 68, 68, 0.02) 100%);
 }
 
 .skills-container {
@@ -17,7 +17,7 @@
   font-size: clamp(2rem, 5vw, 3rem);
   font-weight: 700;
   margin-bottom: 1rem;
-  background: linear-gradient(135deg, #ffffff 0%, #ffffff 30%, #9333ea 70%, #7c3aed 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #ffffff 30%, #ef4444 70%, #dc2626 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
@@ -57,8 +57,11 @@
 .skill-icon {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  display: block;
-  transition: all 0.3s ease;
+  display: inline-block;
+  transition: filter 0.3s ease, transform 0.3s ease;
+  transform-origin: center center;
+  width: 2.5rem;
+  text-align: center;
 }
 
 /* Orange bloom - Rocket 🚀 */
@@ -71,7 +74,7 @@
   filter: drop-shadow(0 0 18px rgba(255, 152, 0, 0.7)) 
           drop-shadow(0 0 36px rgba(255, 87, 34, 0.4))
           drop-shadow(0 0 54px rgba(244, 67, 54, 0.2));
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
 }
 
 /* Red bloom - Target 🎯 */
@@ -84,7 +87,7 @@
   filter: drop-shadow(0 0 18px rgba(244, 67, 54, 0.7)) 
           drop-shadow(0 0 36px rgba(229, 57, 53, 0.4))
           drop-shadow(0 0 54px rgba(211, 47, 47, 0.2));
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
 }
 
 /* Gray bloom - Tools 🔧🛠️ */
@@ -97,7 +100,7 @@
   filter: drop-shadow(0 0 18px rgba(158, 158, 158, 0.7)) 
           drop-shadow(0 0 36px rgba(117, 117, 117, 0.4))
           drop-shadow(0 0 54px rgba(97, 97, 97, 0.2));
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
 }
 
 /* Yellow bloom - Lightning ⚡ */
@@ -110,7 +113,7 @@
   filter: drop-shadow(0 0 18px rgba(255, 235, 59, 0.7)) 
           drop-shadow(0 0 36px rgba(255, 193, 7, 0.4))
           drop-shadow(0 0 54px rgba(255, 152, 0, 0.2));
-  transform: scale(1.1);
+  transform: scale(1.1) translateX(0) !important;
 }
 
 /* Orange bloom - AWS ☁️ */
@@ -123,7 +126,7 @@
   filter: drop-shadow(0 0 15px rgba(255, 152, 0, 0.7)) 
           drop-shadow(0 0 30px rgba(255, 87, 34, 0.4))
           drop-shadow(0 0 45px rgba(244, 67, 54, 0.2));
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
 }
 
 /* Rainbow bloom - Art palette 🎨 */
@@ -140,7 +143,7 @@
           drop-shadow(0 0 15px rgba(33, 150, 243, 0.6))
           drop-shadow(0 0 15px rgba(156, 39, 176, 0.6))
           drop-shadow(0 0 30px rgba(244, 67, 54, 0.3));
-  transform: scale(1.1);
+  transform: scale(1.1) !important;
 }
 
 .skill-card h3 {

@@ -176,30 +176,13 @@
     0 0 20px rgba(30, 144, 255, 0.2);
 }
 
-/* Skills - Purple */
+/* Skills - Red */
 .navbar-link-skills:hover {
-  background: rgba(147, 51, 234, 0.2);
-  box-shadow: 0 4px 15px rgba(147, 51, 234, 0.3);
-}
-
-.navbar-link-skills.active {
-  background: linear-gradient(135deg, 
-    rgba(147, 51, 234, 0.8) 0%,
-    rgba(168, 85, 247, 0.6) 50%,
-    rgba(124, 58, 237, 0.8) 100%
-  );
-  box-shadow: 
-    0 4px 15px rgba(147, 51, 234, 0.4),
-    0 0 20px rgba(147, 51, 234, 0.2);
-}
-
-/* Projects - Red */
-.navbar-link-projects:hover {
   background: rgba(239, 68, 68, 0.2);
   box-shadow: 0 4px 15px rgba(239, 68, 68, 0.3);
 }
 
-.navbar-link-projects.active {
+.navbar-link-skills.active {
   background: linear-gradient(135deg, 
     rgba(239, 68, 68, 0.8) 0%,
     rgba(248, 113, 113, 0.6) 50%,
@@ -208,6 +191,23 @@
   box-shadow: 
     0 4px 15px rgba(239, 68, 68, 0.4),
     0 0 20px rgba(239, 68, 68, 0.2);
+}
+
+/* Projects - Green */
+.navbar-link-projects:hover {
+  background: rgba(34, 197, 94, 0.2);
+  box-shadow: 0 4px 15px rgba(34, 197, 94, 0.3);
+}
+
+.navbar-link-projects.active {
+  background: linear-gradient(135deg, 
+    rgba(34, 197, 94, 0.8) 0%,
+    rgba(74, 222, 128, 0.6) 50%,
+    rgba(22, 163, 74, 0.8) 100%
+  );
+  box-shadow: 
+    0 4px 15px rgba(34, 197, 94, 0.4),
+    0 0 20px rgba(34, 197, 94, 0.2);
 }
 
 /* Experience - Green */
