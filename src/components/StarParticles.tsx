@@ -5,10 +5,6 @@ interface Particle {
   id: number
   x: number
   y: number
-  opacity: number
-  scale: number
-  animationDuration: number
-  delay: number
 }
 
 const StarParticles: React.FC = () => {
@@ -19,63 +15,59 @@ const StarParticles: React.FC = () => {
   const createParticle = (): Particle => {
     return {
       id: nextIdRef.current++,
-      x: Math.random() * 80 + 10, // 10% to 90% - keeps particles away from edges
-      y: Math.random() * 80 + 10, // 10% to 90% - keeps particles away from edges
-      opacity: Math.random() * 0.8 + 0.2,
-      scale: Math.random() * 0.5 + 0.5,
-      animationDuration: Math.random() * 2 + 1, // 1-3 seconds
-      delay: Math.random() * 0.5, // 0-0.5 seconds delay
+      x: Math.random() * 80 + 10,
+      y: Math.random() * 80 + 10,
     }
   }
 
   const spawnParticle = () => {
+    if (!containerRef.current) return
+
     const particle = createParticle()
     particlesRef.current.push(particle)
 
-    if (containerRef.current) {
-      const starElement = document.createElement('div')
-      starElement.className = 'star-particle'
-      starElement.style.left = `${particle.x}%`
-      starElement.style.top = `${particle.y}%`
-      starElement.style.opacity = '0'
-      starElement.style.transform = `scale(${particle.scale})`
-      starElement.style.animationDuration = `${particle.animationDuration}s`
-      starElement.style.animationDelay = `${particle.delay}s`
-      
-      // Star SVG
-      starElement.innerHTML = `
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M12 2L15.09 8.26L22 9L17 14.74L18.18 22L12 18.77L5.82 22L7 14.74L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
-        </svg>
-      `
+    // Create star element
+    const starElement = document.createElement('div')
+    starElement.className = 'star-particle twinkling'
+    starElement.style.left = `${particle.x}%`
+    starElement.style.top = `${particle.y}%`
+    starElement.style.transform = `rotate(${Math.random() * 360}deg)`
+    
+    starElement.innerHTML = `
+      <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2L15.09 8.26L22 9L17 14.74L18.18 22L12 18.77L5.82 22L7 14.74L2 9L8.91 8.26L12 2Z" fill="currentColor"/>
+      </svg>
+    `
 
-      containerRef.current.appendChild(starElement)
+    containerRef.current.appendChild(starElement)
 
-      // Start animation
-      requestAnimationFrame(() => {
-        starElement.style.opacity = particle.opacity.toString()
-        starElement.classList.add('twinkle')
-      })
+    // Remove particle after lifetime (3-4 seconds of twinkling + fade)
+    const lifetimeMs = Math.random() * 1000 + 3000
+    setTimeout(() => {
+      // Switch from twinkling to fading
+      starElement.classList.remove('twinkling')
+      starElement.classList.add('fading')
 
-      // Remove particle after animation
+      // Remove from DOM after fade completes
       setTimeout(() => {
         if (starElement.parentNode) {
           starElement.parentNode.removeChild(starElement)
         }
         particlesRef.current = particlesRef.current.filter(p => p.id !== particle.id)
-      }, (particle.animationDuration + particle.delay + 0.5) * 1000)
-    }
+      }, 600)
+    }, lifetimeMs)
   }
 
   useEffect(() => {
+    // Spawn initial stars gradually (1 every 0.5-1 second)
+    for (let i = 0; i < 3; i++) {
+      setTimeout(() => spawnParticle(), (i + 1) * (Math.random() * 500 + 500))
+    }
+
+    // Continuously spawn new stars after initial delay
     const spawnInterval = setInterval(() => {
       spawnParticle()
-    }, Math.random() * 2000 + 1000) // Random spawn rate between 1000ms and 3000ms (1-3 seconds)
-
-    // Initial particles - more stars for the larger area
-    for (let i = 0; i < 5; i++) {
-      setTimeout(() => spawnParticle(), Math.random() * 2000)
-    }
+    }, Math.random() * 1500 + 1500) // Every 1.5-3 seconds
 
     return () => {
       clearInterval(spawnInterval)
