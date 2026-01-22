@@ -233,8 +233,8 @@
 .hero .btn-primary {
   /* Restored glossy blue gradient (muted) */
   background: linear-gradient(135deg,
-    #f6fbff 0%,
-    #9dd9fb 15%,
+    #4a9ef0 0%,
+    #4a9ef0 15%,
     #4a9ef0 35%,
     #0b75e0 70%,
     #003d7a 100%);
@@ -250,20 +250,8 @@
 }
 
 .hero .btn-primary::before {
-  /* Subtle gloss overlay */
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  height: 48%;
-  background: linear-gradient(180deg,
-    rgba(255, 255, 255, 0.08) 0%,
-    rgba(255, 255, 255, 0.03) 50%,
-    rgba(255, 255, 255, 0) 100%);
-  pointer-events: none;
-  opacity: 0.7;
-  transition: opacity 180ms ease;
+  /* Gloss overlay removed for flat appearance */
+  display: none;
 }
 
 .hero .btn-primary:hover {
